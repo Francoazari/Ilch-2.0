@@ -52,13 +52,4 @@ class Mapper
     {
         $this->db = $db;
     }
-
-    /**
-     * Simple helper for triggering events
-     * @param string $event
-     * @param array $args
-     */
-    protected function trigger($event, array $args) {
-        trigger($event, new Event($event, $args));
-    }
 }

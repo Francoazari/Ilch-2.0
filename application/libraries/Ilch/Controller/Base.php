@@ -6,8 +6,6 @@
 
 namespace Ilch\Controller;
 
-use Ilch\Event;
-
 class Base
 {
     /**
@@ -168,14 +166,5 @@ class Base
         } elseif (!is_array($message)) {
             $_SESSION['messages'][] = ['text' => $this->getTranslator()->trans($message), 'type' => $type];
         }
-    }
-
-    /**
-     * Simple helper for triggering events
-     * @param string $event
-     * @param array $args
-     */
-    protected function trigger($event, array $args) {
-        trigger($event, new Event($event, $args));
     }
 }
